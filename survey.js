@@ -6,20 +6,29 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.question('What do you think of Node.js? ', (answer) => {
+rl.question('What do you think of Lighhouse Labs? ', (answer) => {
   // TODO: Log the answer in a database
-  console.log(`Thank you for your valuable feedback: ${answer}`);
-  rl.close();
+  rl.question('What is your name or nickname? ', (nickname) => {
+    rl.question('What\'s an activity you like doing? ', (activity) => {
+      rl.question('What do you listen to while doing that? ', (music) => {
+        rl.question('What\'s your least favourite food?', (food) => {
+          // console.log(`Yeah ${food}'s  gross. Me neither`);
+          // console.log(`No way. Didnt think you were a ${music} fan!`);
+          // console.log(`Thats Cool, I like ${activity} too.`);    
+          // console.log(`Thank you for sharing your nickname: ${nickname}`);
+        
+          // console.log(`Thank you for your valuable feedback: ${answer}`);
+          console.log(`You like to listen to ${music} when you are busy with ${activity}.\nYou also hate ${food} and got the nickname ${nickname} when you were younger.\nI agree LHL is ${answer}`);
+        rl.close();
+        });
+      });
+    });
+  });
 });
 
-rl.question('What is your name or nickname? ', (nameAnswer) => {
-  // TODO: Log the answer in a database
-  console.log(`Thank you for sharing: ${nameAnswer}`);
+  // Questions;
 
-  rl.close();
-});
-
-//
+// What is your name or nickname?
 
 // What's an activity you like doing?
 // What do you listen to while doing that ?
